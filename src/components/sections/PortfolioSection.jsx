@@ -21,7 +21,7 @@ const PortfolioSection = () => {
         id: 2,
         title: 'Answerst - Infonagreen',
         description: 'Landing page para la empresa Answer st con Infonagreen, con un diseño atractivo y afincado a su identidad corporativa, utilizando tecnologías modernas para garantizar un rendimiento óptimo.',
-        image: 'https://images.unsplash.com/photo-1454165804606-c3d57bc86b40',
+        image: '/public/Answer_st.png',
         technologies: ['Next.js', 'React', 'Tailwind.css', 'PHPMailer'],
         link: 'https://answerst.netlify.app'
       },
@@ -29,7 +29,7 @@ const PortfolioSection = () => {
         id: 3,
         title: 'BetonTrowel',
         description: 'Sistema de reservas online con calendario interactivo, notificaciones automáticas y panel de administración.',
-        image: 'https://images.unsplash.com/photo-1497366216548-37526070297c',
+        image: '/public/BetonyEquipos.png',
         technologies: ['Next.js', 'Tailwind.css', 'React', 'TypeScript', 'Node.js'],
         link: 'https://betontrowel.netlify.app'
       },
@@ -37,7 +37,7 @@ const PortfolioSection = () => {
         id: 4,
         title: 'Boda - Invitacion virtual',
         description: 'Sitio web corporativo moderno con blog integrado, formularios de contacto y optimización SEO.',
-        image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f',
+        image: '/public/InvitacionBoda.png',
         technologies: ['React', 'Tailwind', 'Next.js', 'TypeScript'],
         link: 'https://bodainvitaciona.netlify.app'
       },
@@ -45,7 +45,7 @@ const PortfolioSection = () => {
         id: 5,
         title: 'EsenciaCafe - Menu digital',
         description: 'Panel de control con visualización de datos en tiempo real, gráficos interactivos y exportación de reportes.',
-        image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71',
+        image: '/public/MenuCafeteria.png',
         technologies: ['React', 'Tailwind', 'Next.js', 'Node.js', 'MySQL', 'TypeScript'],
         link: 'https://esenciacafe.devandrade.com'
       },
@@ -53,7 +53,7 @@ const PortfolioSection = () => {
         id: 6,
         title: 'Pagina de nominaciones - Eventos',
         description: 'Aplicación colaborativa para gestión de proyectos con tableros Kanban y asignación de tareas.',
-        image: 'https://images.unsplash.com/photo-1484480974693-6ca0a78fb36b',
+        image: '/public/YisusAwards.png',
         technologies: ['React', 'Tailwind', 'Next.js', 'TypeScript'],
         link: 'https://theyisusawards.netlify.app'
       },
@@ -61,7 +61,7 @@ const PortfolioSection = () => {
         id: 7,
         title: 'Sistema de rentas - Maquinaria',
         description: 'Aplicación colaborativa para gestión de proyectos con tableros Kanban y asignación de tareas.',
-        image: 'https://images.unsplash.com/photo-1484480974693-6ca0a78fb36b',
+        image: '/public/Sistemarenta.png',
         technologies: ['Next.js', 'Tailwind', 'MySQL', 'Node.js', 'TypeScript'],
         link: 'https://sistemarenta.netlify.app'
       },
@@ -69,7 +69,7 @@ const PortfolioSection = () => {
         id: 8,
         title: 'Cadtoner - distribuidores',
         description: 'Aplicación colaborativa para gestión de proyectos con tableros Kanban y asignación de tareas.',
-        image: 'https://images.unsplash.com/photo-1484480974693-6ca0a78fb36b',
+        image: '/public/Cadtoner.png',
         technologies: ['Next.js', 'Tailwind', 'React', 'SQL server', 'Node.js', 'TypeScript', 'FastAPI', 'Express', 'JavaScript'],
         link: 'https://cadtonerdistribuidores.com'
       },
