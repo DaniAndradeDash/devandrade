@@ -5,6 +5,8 @@ import SectionTitle from '@/components/SectionTitle';
 import { Button } from '@/components/ui/button';
 import { useToast } from '@/components/ui/use-toast';
 
+const WEB3FORMS_ACCESS_KEY = import.meta.env.VITE_WEB3FORMS_ACCESS_KEY || '978589a8-5591-4a29-b224-7861bb53ed2a';
+
 const ContactSection = () => {
   const ref = useRef(null);
   const isInView = useInView(ref, {
@@ -19,6 +21,7 @@ const ContactSection = () => {
     mensaje: ''
   });
   const [errors, setErrors] = useState({});
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
   const validateForm = () => {
     const newErrors = {};
@@ -40,7 +43,7 @@ const ContactSection = () => {
     return Object.keys(newErrors).length === 0;
   };
 
-  const handleSubmit = e => {
+  const handleSubmit = async e => {
     e.preventDefault();
     if (!validateForm()) {
       toast({
@@ -51,27 +54,50 @@ const ContactSection = () => {
       return;
     }
 
-    // Save to localStorage
-    const existingMessages = JSON.parse(localStorage.getItem('contactMessages') || '[]');
-    const newMessage = {
-      ...formData,
-      id: Date.now(),
-      date: new Date().toISOString()
-    };
-    localStorage.setItem('contactMessages', JSON.stringify([...existingMessages, newMessage]));
-    toast({
-      title: '¡Mensaje enviado!',
-      description: 'Gracias por contactarme. Te responderé lo antes posible.'
-    });
+    setIsSubmitting(true);
 
-    // Reset form
-    setFormData({
-      nombre: '',
-      email: '',
-      asunto: '',
-      mensaje: ''
-    });
-    setErrors({});
+    try {
+      const response = await fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Accept': 'application/json'
+        },
+        body: JSON.stringify({
+          access_key: WEB3FORMS_ACCESS_KEY,
+          nombre: formData.nombre,
+          email: formData.email,
+          asunto: formData.asunto,
+          mensaje: formData.mensaje
+        })
+      });
+
+      const data = await response.json();
+
+      if (response.ok && data.success) {
+        toast({
+          title: '¡Mensaje enviado!',
+          description: 'Gracias por contactarme. Te responderé lo antes posible.'
+        });
+        setFormData({
+          nombre: '',
+          email: '',
+          asunto: '',
+          mensaje: ''
+        });
+        setErrors({});
+      } else {
+        throw new Error(data.message || 'Error al enviar el mensaje');
+      }
+    } catch (error) {
+      toast({
+        title: 'Error al enviar',
+        description: 'Hubo un problema al enviar tu mensaje. Por favor, intenta de nuevo.',
+        variant: 'destructive'
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const handleChange = e => {
@@ -201,9 +227,21 @@ const ContactSection = () => {
                 {errors.mensaje && <p className="mt-1 text-sm text-red-500">{errors.mensaje}</p>}
               </div>
 
-              <Button type="submit" className="w-full bg-emerald-600 hover:bg-emerald-700 text-white py-6 rounded-lg font-medium transition-all duration-300 flex items-center justify-center gap-2">
-                <Send size={20} />
-                Enviar Mensaje
+              <Button type="submit" disabled={isSubmitting} className="w-full bg-emerald-600 hover:bg-emerald-700 text-white py-6 rounded-lg font-medium transition-all duration-300 flex items-center justify-center gap-2 disabled:opacity-50 disabled:cursor-not-allowed">
+                {isSubmitting ? (
+                  <>
+                    <svg className="animate-spin h-5 w-5" viewBox="0 0 24 24">
+                      <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4" fill="none" />
+                      <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z" />
+                    </svg>
+                    Enviando...
+                  </>
+                ) : (
+                  <>
+                    <Send size={20} />
+                    Enviar Mensaje
+                  </>
+                )}
               </Button>
             </form>
           </motion.div>
