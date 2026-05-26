@@ -13,7 +13,7 @@ const PortfolioSection = () => {
         id: 1,
         title: 'Topp & Screed',
         description: 'Creaciòn de una pagina web para dar a conocer las maquinarias de la empresa, con un diseño moderno y funcional, utilizando React para una experiencia de usuario fluida.',
-        image: '/public/EquiposyTopp.png',
+        image: '/EquiposyTopp.png',
       technologies: ['Next.js', 'React', 'Tailwind.css', 'PHPMailer'],
         link: 'https://toppandscreedmx.netlify.app'
       },
@@ -21,7 +21,7 @@ const PortfolioSection = () => {
         id: 2,
         title: 'Answerst - Infonagreen',
         description: 'Landing page para la empresa Answer st con Infonagreen, con un diseño atractivo y afincado a su identidad corporativa, utilizando tecnologías modernas para garantizar un rendimiento óptimo.',
-        image: '/public/Answer_st.png',
+        image: '/Answer_st.png',
         technologies: ['Next.js', 'React', 'Tailwind.css', 'PHPMailer'],
         link: 'https://answerst.netlify.app'
       },
@@ -29,7 +29,7 @@ const PortfolioSection = () => {
         id: 3,
         title: 'BetonTrowel',
         description: 'Sistema de reservas online con calendario interactivo, notificaciones automáticas y panel de administración.',
-        image: '/public/BetonyEquipos.png',
+        image: '/BetonyEquipos.png',
         technologies: ['Next.js', 'Tailwind.css', 'React', 'TypeScript', 'Node.js'],
         link: 'https://betontrowel.netlify.app'
       },
@@ -37,7 +37,7 @@ const PortfolioSection = () => {
         id: 4,
         title: 'Boda - Invitacion virtual',
         description: 'Sitio web corporativo moderno con blog integrado, formularios de contacto y optimización SEO.',
-        image: '/public/InvitacionBoda.png',
+        image: '/InvitacionBoda.png',
         technologies: ['React', 'Tailwind', 'Next.js', 'TypeScript'],
         link: 'https://bodainvitaciona.netlify.app'
       },
@@ -45,7 +45,7 @@ const PortfolioSection = () => {
         id: 5,
         title: 'EsenciaCafe - Menu digital',
         description: 'Panel de control con visualización de datos en tiempo real, gráficos interactivos y exportación de reportes.',
-        image: '/public/MenuCafeteria.png',
+        image: '/MenuCafeteria.png',
         technologies: ['React', 'Tailwind', 'Next.js', 'Node.js', 'MySQL', 'TypeScript'],
         link: 'https://esenciacafe.devandrade.com'
       },
@@ -53,7 +53,7 @@ const PortfolioSection = () => {
         id: 6,
         title: 'Pagina de nominaciones - Eventos',
         description: 'Aplicación colaborativa para gestión de proyectos con tableros Kanban y asignación de tareas.',
-        image: '/public/YisusAwards.png',
+        image: '/YisusAwards.png',
         technologies: ['React', 'Tailwind', 'Next.js', 'TypeScript'],
         link: 'https://theyisusawards.netlify.app'
       },
@@ -61,7 +61,7 @@ const PortfolioSection = () => {
         id: 7,
         title: 'Sistema de rentas - Maquinaria',
         description: 'Aplicación colaborativa para gestión de proyectos con tableros Kanban y asignación de tareas.',
-        image: '/public/Sistemarenta.png',
+        image: '/Sistemarenta.png',
         technologies: ['Next.js', 'Tailwind', 'MySQL', 'Node.js', 'TypeScript'],
         link: 'https://sistemarenta.netlify.app'
       },
@@ -69,7 +69,7 @@ const PortfolioSection = () => {
         id: 8,
         title: 'Cadtoner - distribuidores',
         description: 'Aplicación colaborativa para gestión de proyectos con tableros Kanban y asignación de tareas.',
-        image: '/public/Cadtoner.png',
+        image: '/Cadtoner.png',
         technologies: ['Next.js', 'Tailwind', 'React', 'SQL server', 'Node.js', 'TypeScript', 'FastAPI', 'Express', 'JavaScript'],
         link: 'https://cadtonerdistribuidores.com'
       },
